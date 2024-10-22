@@ -1,0 +1,276 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2em;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(to right, #4a90e2, #50a3a2);
+    color: #fff;
+    padding: 2em 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3em;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.option-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.option-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    color: #4a90e2;
+}
+
+.option-card p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 1.5em;
+}
+
+.option-card button {
+    background: linear-gradient(to right, #4a90e2, #50a3a2);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    padding: 0.8em 2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.option-card button:hover {
+    background: linear-gradient(to right, #50a3a2, #4a90e2);
+    transform: scale(1.05);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: #4a90e2;
+}
+
+.modal button[type="button"] {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.modal button[type="button"]:hover {
+    background: #50a3a2;
+}
+body {
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2em;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(to right, #4a90e2, #50a3a2);
+    color: #fff;
+    padding: 2em 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3em;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.option-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.option-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    color: #4a90e2;
+}
+
+.option-card p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 1.5em;
+}
+
+.option-card button {
+    background: linear-gradient(to right, #4a90e2, #50a3a2);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    padding: 0.8em 2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.option-card button:hover {
+    background: linear-gradient(to right, #50a3a2, #4a90e2);
+    transform: scale(1.05);
+}
+
+/* Custom Confirmation Modal */
+#confirmationOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#confirmationModal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%; /* Make it responsive for mobile */
+    text-align: center;
+}
+
+#confirmationModal h2 {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    color: #4a90e2;
+}
+
+#confirmationModal p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+#confirmationModal button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 0.5em;
+    width: 140px;
+    transition: background 0.3s ease;
+}
+
+#confirmationModal button:hover {
+    background: #357ABD;
+}
+
+#confirmationModal #cancelButton {
+    background: #777;
+}
+
+#confirmationModal #cancelButton:hover {
+    background: #555;
+}
+
+/* Media query for smaller devices */
+@media (max-width: 600px) {
+    #confirmationModal {
+        width: 75%;
+    }
+
+    .option-card {
+        width: 100%;
+        margin: 1em 0;
+    }
+}

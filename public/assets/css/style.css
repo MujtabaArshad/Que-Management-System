@@ -1,0 +1,157 @@
+html, body {
+height: 100%;
+margin: 0;
+}
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+#content {
+flex: 1;
+}
+
+
+
+#card{
+
+margin-top:90px;
+}
+
+#basicModal{
+
+margin-top:50px;
+
+}
+#qrcode{
+display:flex;
+margin:auto;
+}
+#footer{
+margin-top:50px;
+}
+
+
+
+/* menu link  */
+
+
+.menu-link i {
+font-size: 1.2em; 
+margin-right: 10px;
+
+}
+html, body {
+height: 100%;
+margin: 0;
+}
+
+/* footer  */
+footer {
+background-color: #f8f9fa;
+padding: 10px;
+margin-top: 500px;
+text-align: center;
+position: relative;
+
+bottom: 0;
+width: 100%;
+}
+
+
+/* 
+option show mobile */
+
+.content-wrapper {
+position: relative;
+}
+
+.button-container {
+position: absolute; 
+right: 0;
+top: 0; 
+margin-top: 20px; 
+margin-left: 520px;
+margin-right: 20px;
+}
+#card{
+margin-top: 50px;
+}
+
+
+
+
+/* siebar */
+.content-wrapper {
+position: relative;
+}
+
+.button-container {
+position: absolute; 
+right: 0;
+top: 0; 
+margin-top: 20px; 
+margin-left: 520px;
+margin-right: 20px;
+}
+#card{
+margin-top: 50px;
+}
+/* footer  */
+
+footer {
+background-color: #f8f9fa;
+padding: 10px;
+margin-top: 500px;
+text-align: center;
+position: relative;
+bottom: 0;
+width: 100%;
+}
+
+
+
+.content-wrapper {
+position: relative;
+}
+
+.button-container {
+position: absolute; 
+right: 0;
+top: 0; 
+margin-top: 20px; 
+margin-left: 520px;
+margin-right: 20px;
+}
+#card{
+margin-top: 50px;
+}
+
+
+
+.menu-item a {
+text-decoration: none;
+color: inherit;
+}
+.menu-item.active > a {
+background-color: blue;
+color: white;
+}
+.menu-item:hover > a {
+background-color:blue;
+color: white;
+}
+#bank{
+margin-top:40px;
+margin-left:10px;
+}
+#branch{
+margin-top:40px;
+margin-left:10px;
+}
+#user{
+margin-top:40px;
+margin-left:10px;
+}
+

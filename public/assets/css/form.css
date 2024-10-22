@@ -1,0 +1,334 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.modal-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal {
+    display: block;
+    background: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 330px;
+    width: 90%;
+    text-align: left;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 0.3s ease-out;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal label {
+    margin-bottom: 4px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.modal input[type="text"],
+.modal input[type="number"],
+.modal select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal input[type="text"]:focus,
+.modal input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.modal input[type="submit"] {
+    padding: 12px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.modal input[type="submit"]:hover {
+    background: linear-gradient(to right, #0056b3, #007bff);
+    transform: scale(1.03);
+}
+
+.alert-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+    max-width: 90%;
+}
+
+.alert-modal img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.alert-modal p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.alert-modal button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.alert-modal button:hover {
+    background: linear-gradient(to right, #0056b3, #007bff);
+}
+
+.required-field::after {
+    content: " *";
+    color: red;
+}
+
+.form-control {
+    flex: 1;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    background: linear-gradient(to right, #5656f7, #4646d9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 14px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #4646d9, #5656f7);
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+        padding: 1em;
+    }
+
+    .modal h3 {
+        font-size: 1.1em;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="number"],
+    .modal select,
+    .modal input[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .modal {
+        width: 100%;
+        padding: 0.5em;
+    }
+
+    .modal h3 {
+        font-size: 1em;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="number"],
+    .modal select,
+    .modal input[type="submit"] {
+        font-size: 12px;
+    }
+}
+.phone-container {
+    margin-bottom: 20px;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.country-code {
+    width: 40px; /* Adjust this width as needed */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.9em;
+    height: 40px; /* Ensure height matches input field */
+}
+
+.form-control {
+    flex: 1;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.9em;
+    height: 40px; /* Ensure height matches dropdown */
+    margin-left: -1px; /* Remove space between dropdown and input */
+}
+
+.phone-input select,
+.phone-input input {
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.required-field {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#phoneError {
+    color: red;
+    font-size: 0.9em;
+}
+#countryCode{
+    width: 90px;
+
+}
+#phoneNumber{
+    border-left: none;
+}
+
+
+
+.required-field::after {
+    content: " *";
+    color: red;
+}
+
+.phone-input-wrapper {
+    display: flex;
+    align-items: center;
+    border-right:none;
+}
+
+.sim-code-dropdown {
+    max-width: 96px;
+    flex: 0 0 80px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.form-control {
+    flex: 1;
+    height: 40px;
+    width: 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    padding-left: 5px;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+
+@media (max-width: 780px) {
+    .modal {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"], select, button {
+        font-size: 12px;
+    }
+}
