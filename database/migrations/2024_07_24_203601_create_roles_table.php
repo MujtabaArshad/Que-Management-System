@@ -22,9 +22,9 @@ class CreateRolesTable extends Migration
            DB::table('roles')->insert([
             [ 'RoleName' => 'SuperAdmin', 'created_at' => now(), 'updated_at' => now()],
             [ 'RoleName' => 'Admin', 'created_at' => now(), 'updated_at' => now()],
-            [ 'RoleName' => 'Bank', 'created_at' => now(), 'updated_at' => now()],
-            [ 'RoleName' => 'User', 'created_at' => now(), 'updated_at' => now()],
-            ['RoleName'=>'Branchmanager','created_at'=>now(),'updated_at'=>now()]
+            ['RoleName'=>'Branchmanager','created_at'=>now(),'updated_at'=>now()],
+      
+          [ 'RoleName' => 'User', 'created_at' => now(), 'updated_at' => now()],
            ]);
     }
 

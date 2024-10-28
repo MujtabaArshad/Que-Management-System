@@ -401,6 +401,10 @@ button:not(:disabled),
   background-clip: text !important;
   text-fill-color: transparent !important;
 }
+.gradient{
+  background: linear-gradient(45deg, #0096bf, #013464) !important;
+  color:white;
+}
 
 .gradient-btn {
   background: linear-gradient(45deg, #0096bf, #013464) !important;

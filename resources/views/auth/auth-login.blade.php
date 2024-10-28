@@ -44,26 +44,29 @@
             </div>
         </div>
 
-        <!-- Sign In Button -->
+        <!-- Role Selection and Sign In Button -->
         <div class="row">
             <div class="col-6">
-                <div class="mb-3 "style="margin-left:40px;">
-                    <button class=" emb btn btn-primary d-grid form-btn gradient-btn" style="width: 80%;" type="submit">
-                        Sign in
+                <div class="mb-3" style="margin-left:40px;">
+                    <button class="emb btn btn-primary d-grid form-btn gradient-btn" style="width: 80%;" type="submit">
+                        Sign In
                     </button>
                 </div>
             </div>
-                
-
-        </form>
-            <!-- Branch Manager Login Button -->
             <div class="col-6">
-                <div class="">
-                    <a href="{{route('auth.login')}}"  class=" emb btn btn-secondary gradient-btn " style="width: 80%;">
-                        Login as BM
-                    </a>
+                <div class="mb-3" style="margin-bottom:90px;">
+                    <label for="roleSelect" class="form-label">Select Role</label>
+                    <select class="form-select" id="roleSelect" name="role" style="width: 80%;">
+                        <option selected disabled>Choose...</option>
+                     <a href="{{route('')}}"> <option value="reason_manager">Reason Manager</option></a>  
+                      <a href=""><option value="branch_manager">Branch Manager</option></a>  
+                    </select>
                 </div>
             </div>
+            
+        </div>
+    </form>
+
 
             </a>
                 </div>

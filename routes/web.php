@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminDashboard\BankuserController;
 use App\Http\Controllers\AdminDashboard\BranchmanagerController;
 use App\Http\Controllers\AdminDashboard\TicketController;
 use App\Http\Controllers\AdminDashboard\LoginController;
+use App\Http\Controllers\AdminDashboard\Reasonmanagercontroller;
 use App\Http\Controllers\AdminDashboard\ViewmanagerController;
 use App\Http\Controllers\AdminDashboard\ViewtransactionController;
 use App\Http\Controllers\QRcodeController;
@@ -46,9 +47,10 @@ Route::post('/branchmanager/login', [BranchmanagerController::class, 'Authentica
         Route::post('/addbranch', [BranchController::class, 'insertData'])->name('insertData');
         Route::get('/view/branch/data', [BranchController::class, 'viewData'])->name('viewData');
         Route::get('/edit/branch/{id}', [BranchController::class, 'editData'])->name('editbranch');
-        Route::get('/view/edit/branch/{id}', [BranchController::class, 'vieweditbranches'])->name('vieweditbranch');
-  
         Route::post('/update/branch/{id}', [BranchController::class, 'updateData']);
+       Route::get('/view/edit/branch/{id}', [BranchController::class, 'vieweditbranches'])->name('vieweditbranch');
+  
+       
         Route::delete('delete/branch/{id}', [BranchController::class, 'delete'])->name('deleteBranch');
     // });
 
@@ -74,12 +76,28 @@ Route::post('/branchmanager/login', [BranchmanagerController::class, 'Authentica
         Route::post('/adduser', [BankuserController::class, 'insertData'])->name('adduser');
         Route::get('/viewuser', [BankuserController::class, 'ShowUser'])->name('ShowUser');
         Route::post('/update-status/{id}', [BankuserController::class, 'updateStatus'])->name('UpdateStatus');
-        Route::get('/edit/{id}', [BankuserController::class, 'edituser'])->name('EditUser');
-        Route::post('/edit/{id}', [BankuserController::class, 'updateData']);
+        Route::get('/edit/user/{id}', [BankuserController::class, 'edituser'])->name('EditUser');
+        Route::post('/update/user/{id}', [BankuserController::class, 'updateData']);
         Route::get('/view/user/{id}', [BankuserController::class, 'Editview'])->name('editview');
  
-        Route::get('/delete/{id}', [BankuserController::class, 'delete'])->name('userdelete');
+        Route::delete('/delete/user/{id}', [BankuserController::class, 'delete'])->name('userdelete');
     // });
+
+
+        // Reason Manager
+
+        Route::get('/add/reason/manager',[Reasonmanagercontroller::class,'getreasonmanager'])->name('getreasonmanager');
+        
+        Route::post('/add/reason/manager',[Reasonmanagercontroller::class,'insertreasonmanager'])->name('addreasonmanager');
+
+        Route::get('show/reason/manager',[Reasonmanagercontroller::class,'showreasonmanager'])->name('showreasonmanager');
+
+        Route::get('edit/reason/manager/{id}',[Reasonmanagercontroller::class,'editreasonmanager'])->name('editreasonmanager');
+        Route::post('update/reason/manager/{id}',[Reasonmanagercontroller::class,'updatereasonmanager'])->name('updatereasonmanager');
+
+        // profile show reason manager
+        Route::get('profile/reason/manager/{id}',[Reasonmanagercontroller::class,'profilereasonmanager'])->name('profileshowedit');
+        Route::delete('delete/reason/manager/{id}',[Reasonmanagercontroller::class,'reasonmanagerdelete'])->name('deletereasonmanager');
 
     // View Manager Routes
     Route::get('/branch-manager/view-manager', [ViewmanagerController::class, 'viewManager'])->name('viewbranchmanager');

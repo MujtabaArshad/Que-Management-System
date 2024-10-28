@@ -19,7 +19,7 @@
     </div>
 
     <div class="card-body">
-    <form action="" method="post" >
+        <form action="{{ url('/update/branch/' . $branch->BranchID) }}" method="POST">
     @csrf
 
     <!-- Branch Name -->

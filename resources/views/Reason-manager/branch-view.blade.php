@@ -49,20 +49,14 @@
                 <button class="btn rounded-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="display:flex; box-shadow:0px 1px 5px rgba(0, 0, 0, 0.16);">
                     <i class="bx bx-filter me-1"></i>
                     <span>Filter</span>
+                    
+                        
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                     <li>
                         <a class="dropdown-item" id="alltransaction" href="#" data-value="">All</a>
                     </li>
-                    @if(count($transactionName) > 0)
-                        @foreach ($transactionName as $transaction)
-                            <li>
-                                <a class="dropdown-item" href="#" data-value="{{ $transaction->transaction_option_id }}">
-                                    {{ $transaction->transaction_option_name }}
-                                </a>
-                            </li>
-                        @endforeach
-                    @endif
+                    
                 </ul>
             </div>
 
@@ -72,19 +66,22 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Customer Name</th>
-                        <th>Customer Phone</th>
-                        <th>Transaction Name</th>
-                        <th>Ticket Number</th>
+                        <th>Branch Name</th>
+                        <th>Branch Address</th>
+                        <th>Branch Code</th>
+                        <th>Bank Name</th>
+                        <th>City Name</th>
+                        
                     </tr>
                 </thead>
                 <tbody id="transactionBody">
-                     @foreach ($transactions as $transaction)
+                     @foreach ($branches as $branch)
                         <tr>
-                            <td>{{ $transaction->customer_name }}</td>
-                            <td>{{ $transaction->customer_phone }}</td>
-                            <td>{{ $transaction->transaction_name }}</td>
-                            <td>{{ $transaction->ticket_number }}</td>
+                            <td>{{ $branch->BranchName }}</td>
+                            <td>{{ $branch->BranchAddress }}</td>
+                            <td>{{ $branch->BranchCode }}</td>
+                            <td>{{ $branch->Bankname }}</td>
+                            <td>{{ $branch->City_name }}</td>
                         </tr>
                     @endforeach
                 </tbody>

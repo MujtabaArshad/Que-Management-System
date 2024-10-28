@@ -176,6 +176,7 @@
 
       
     
+      {{-- download --}}
 
       <div class="modal-body text-center">
       <img id="qrcode_{{$branch->BranchCode}}"
@@ -188,7 +189,7 @@
 
         <button id="downloadButton"
         onclick="downloadQRCode('{{ urlencode(url('option/view/branch/data?BranchCode='.$branch->BranchCode)) }}',
-        '{{ $branch->BranchCode }}')" class="btn btn-primary mb-5">Download</button>
+        '{{ $branch->BranchCode }}')" class=" gradient-btn btn btn-primary mb-5">Download</button>
 
     </div>
 

@@ -111,20 +111,48 @@ class BankController extends  Controller
     }
 
     // update
-
     public function updateData(Request $req, $BankId)
-{
-    $validateData = $req->validate([
-        'Bankname' => 'required|string|max:255',
-        'email' => ['required', 'email', Rule::unique('tbl_banks')->ignore($BankId, 'BankId')],
-        'contact' => 'required|digits:11',
-        'No_of_Employee' => 'required|integer',
-        'NTN' => ['required', 'digits:13', Rule::unique('tbl_banks')->ignore($BankId, 'BankId')],
-        'Address' => 'required|string|max:255',
-        'Password' => 'nullable|string|min:6',
-        'Branches' => 'required|integer',
-    ]);
-
+    {
+        $validateData = $req->validate([
+            'Bankname' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('tbl_banks')->ignore($BankId, 'BankId')
+            ],
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('tbl_banks')->ignore($BankId, 'BankId')
+            ],
+            'contact' => [
+                'required',
+                'digits:11',
+                Rule::unique('tbl_banks')->ignore($BankId, 'BankId') // Ensure contact is unique
+            ],
+                
+            'No_of_Employee' => 'required|integer',
+            'NTN' => [
+                'required',
+                'digits:13',
+                Rule::unique('tbl_banks')->ignore($BankId, 'BankId')
+            ],
+            'Address' => 'required|string|max:255',
+            'Password' => 'nullable|string|min:6',
+            'Branches' => 'required|integer',
+        ], [
+            'Bankname.unique' => 'The bank name has already been taken.',
+            'email.unique' => 'The email has already been taken.',
+            'NTN.unique' => 'The NTN has already been taken.',
+        ]);
+    
+        // Perform the update logic here
+        $bank = Bank::findOrFail($BankId);
+        $bank->update($validateData);
+    
+    
+  
+    
     $updateData = Bank::find($BankId);
 
     if($updateData) {

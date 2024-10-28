@@ -273,6 +273,21 @@ public function insertData(Request $req)
     }
 }
 
+   // Delete User
+  // Delete User
+public function delete($id)
+{
+    $user = UserBank::find($id);
+    if ($user) {
+        $user->delete();
+        return redirect()->route('ShowUser')->with('success', 'User deleted successfully.');
+    } else {
+        return redirect()->route('ShowUser')->with('error', 'User not found.');
+    }
+}
+
+   }
+
 //     public function updateStatus(Request $request, $id)
 // {
 //     $user = UserBank::find($id);
@@ -304,15 +319,4 @@ public function insertData(Request $req)
     // }
 
 
-    // Delete User
-    public function delete($id)
-    {
-    $user = UserBank::find($id);
-    if ($user) {
-    $user->delete();
-    return redirect()->route('ShowUser')->with('success', 'User deleted successfully.');
-    } else {
-    return redirect()->route('ShowUser')->with('error', 'User not found.');
-    }
-    }
-    }
+ 

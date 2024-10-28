@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Form </title>
     <link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
+    
     </head>
+    <style>
+
+.gradient-text {
+  background: linear-gradient(45deg, #0096bf, #013464) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-fill-color: transparent !important;
+}
+.gradient{
+  background: linear-gradient(45deg, #0096bf, #013464) !important;
+  color:white;
+}
+
+.gradient-btn {
+  background: linear-gradient(45deg, #0096bf, #013464) !important;
+  border: none !important;
+ 
+   
+   
+}
+    </style>
     <body>
     <div class="overlay" id="overlay"></div>
 
@@ -62,7 +85,7 @@
     <input type="hidden" id="ticket_number" name="ticket_number">
 
  
-    <button type="submit">Submit</button>
+    <button class="gradient-btn" type="submit">Submit</button>
     </form>
     </div>
     </div>

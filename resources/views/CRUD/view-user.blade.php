@@ -157,10 +157,15 @@
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                <!-- Delete button -->
-                                <a href="{{ url('deleteuser/'.$user->id) }}" class="delete-icon">
-                                    <i class="fas fa-trash" onclick="return confirm('Are you sure you want to delete this user?');"></i>
-                                </a>
+ 
+                                
+                                <form action="{{ route('userdelete', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this User?');" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" aria-label="Delete User" style="border:none; background:none; cursor:pointer;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
